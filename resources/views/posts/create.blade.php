@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form action="/p" method="post">
+    <form action="/p" enctype="multipart/form-data" method="post">
         @csrf
         <h1 style="text-align: center">Maak een opdracht</h1>
         <div class="form-group row">

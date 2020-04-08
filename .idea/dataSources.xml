@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\xampp\htdocs\opdrachten-systeem\database\database.sqlite</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="database [2]" uuid="c5f410aa-90bf-4a0c-9d2f-c4f82d5d0f42">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\xampp\htdocs\Underdogs\database\database.sqlite</jdbc-url>
+    </data-source>
   </component>
 </project>

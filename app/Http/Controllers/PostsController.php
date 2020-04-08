@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
 
 class PostsController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function create()
     {
@@ -20,16 +25,14 @@ class PostsController extends Controller
             'description' => 'required',
         ]);
 
+        auth()->user()->posts()->create($data);
+        dd(request()->all());
 
-    public function store(Request $request)
+        return redirect('/profile/' . auth()->user()->id);
+    }
+          public function show(\App\Post $post)
     {
-        dd($request->all());
+     dd($post);
     }
 
-
-
-auth()->user()->posts()->create($data);
-
-}
-    }
 }

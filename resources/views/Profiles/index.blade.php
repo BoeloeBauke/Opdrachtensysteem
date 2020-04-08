@@ -9,10 +9,17 @@
     <div class="" style="text-align: center; padding-top: 50px;">
         <div>
             <h1>{{$user->username}}</h1>
-            <a href="#">Voeg een opdracht toe</a>
+            <a href="/p/create">Voeg een opdracht toe</a>
         </div>
         <div class="">{{ $user->profile->title }}</div>
         <div>{{ $user->profile->description }}</div>
+    <div class="col-4">
+        @foreach($user->posts as $post)
+            <a href="/p/{{ $post->id }}">
+                <button>Post</button>
+            </a>
+        @endforeach
+    </div>
     </div>
 </div>
 @endsection
