@@ -13,6 +13,13 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        $users = auth()->user()->pluck('id');
+
+        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(6);
+        return view('posts.index', compact('posts'));
+    }
     public function create()
     {
         return view('posts.create');
@@ -26,13 +33,13 @@ class PostsController extends Controller
         ]);
 
         auth()->user()->posts()->create($data);
-        dd(request()->all());
+
 
         return redirect('/profile/' . auth()->user()->id);
     }
           public function show(\App\Post $post)
     {
-     dd($post);
+     return view('posts.show',compact('post'));
     }
 
 }

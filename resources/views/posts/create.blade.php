@@ -29,7 +29,7 @@
             @enderror
         </div>
         <div class="row pt-4" >
-            <button class="btn btn-primary" style="">Voeg Opdracht toe</button>
+            <button  class="btn btn-primary" >Voeg Opdracht toe</button>
 
         </div>
     </form>
