@@ -13,7 +13,9 @@
             </a>
      <h3 style =" padding-top: 25px;">{{ $post->title }}</h3>
     <div class="text" style="text-align: left; padding-bottom: 50px;">
-        {{ $post->description }}</div>
+        {{ $post->description }}
+    </div>
+
     @endforeach
 
     <div class="row">
